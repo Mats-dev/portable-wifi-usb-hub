@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-S2 Wi-Fi Drive Manager</title>
+</head>
+<body>
+    <h1>ESP32-S2 Wi-Fi Drive Manager</h1>
+    <a href="/">Home</a><br>
+    <a href="/scan">Scan Drives</a><br>
+    <a href="/usage">Check Usage</a><br>
+
+    <h2>Manage Drives</h2>
+    <form action="/mount" method="get">
+        <label for="drive">Mount Drive:</label>
+        <input type="text" id="drive" name="drive" placeholder="Enter drive (e.g., /dev/sda1)">
+        <input type="submit" value="Mount">
+    </form>
+
+    <form action="/unmount" method="get">
+        <label for="drive">Unmount Drive:</label>
+        <input type="text" id="drive" name="drive" placeholder="Enter drive (e.g., /dev/sda1)">
+        <input type="submit" value="Unmount">
+    </form>
+
+    <form action="/eject" method="get">
+        <label for="drive">Eject Drive:</label>
+        <input type="text" id="drive" name="drive" placeholder="Enter drive (e.g., /dev/sda1)">
+        <input type="submit" value="Eject">
+    </form>
+
+    <h2>Drive Usage</h2>
+    <pre id="usage"></pre>
+
+    <script>
+        function fetchUsage() {
+            fetch('/usage')
+                .then(response => response.text())
+                .then(data => document.getElementById('usage').innerText = data)
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Fetch usage on page load
+        window.onload = fetchUsage;
+    </script>
+</body>
+</html>
