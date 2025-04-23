@@ -1,5 +1,3 @@
-Certainly! To achieve this, we'll create a static HTML file that will be served by the Raspberry Pi's Flask application. This HTML file will include forms and buttons to manage the USB drives and display their usage. The Flask application will handle the backend logic and serve the HTML file.
-
 ### **Enhanced Project: ESP32-S2 Wi-Fi Drive Manager with Raspberry Pi Zero 2W for Multiple USB Drives**
 
 #### **Hardware Setup:**
@@ -310,7 +308,3 @@ if __name__ == '__main__':
   - **HTML Interface:** The Raspberry Pi serves a static HTML file that provides a user-friendly interface for managing USB drives.
   - **Drive Management:** The Raspberry Pi supports multiple drives by dynamically creating mount points and handling actions based on the drive identifier.
   - **Usage Statistics:** The Raspberry Pi can provide disk usage statistics for all mounted drives via the web interface.
-
-### **Conclusion:**
-
-This enhanced project allows you to manage multiple USB drives efficiently using a combination of an ESP32-S2 and a Raspberry Pi Zero 2W. The web interface, served by the Raspberry Pi, provides a user-friendly way to scan, mount, unmount, eject, and check the usage of multiple USB drives, making it a versatile tool for various applications.
